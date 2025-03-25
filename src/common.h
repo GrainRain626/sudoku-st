@@ -42,30 +42,30 @@ struct Normal : KeyMap
         DOWN = 0x73;
         RIGHT = 0x64;
     }
-}
+};
 
 struct Vim : KeyMap
 {
-    vim()
+    Vim()
     {
         UP = 0x6B;
         LEFT = 0x68;
         DOWN = 0x6A;
         RIGHT = 0x6C;
     }
-}
+};
 
 struct point_t
 {
     int x;
     int y;
-}
+};
 
 struct point_value_t
 {
     int value;
     State state;
-}
+};
 
 class CPointySort
 {

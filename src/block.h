@@ -9,7 +9,7 @@ class CBlock
     static const int MAX_COUNT = 9;
 
 public:
-    CBLOCK();
+    CBlock();
     bool isValid() const;
     bool isFull() const;
     void print() const;

@@ -5,7 +5,7 @@
 #include "input.h"
 #include "scene.h"
 #include "system_env.hpp"
-#include "utilty.inl"
+#include "utility.inl"
 
 static void printHelp() {
     std::cout << std::endl;
@@ -20,8 +20,32 @@ static void printHelp() {
 
 int main(int argc, char **argv)
 {
-    SetSystemENV();
+    SetSystemEnv();
 
+    CScene scene;
     
+    if(argc == 1) {
+        InputLanguage();
+        int eraseGridNumber = inputDifficulty();
+        scene.generate();
+        scene.eraseRandomGrids(eraseGridNumber);
+    }
+    else if(argc == 3 && !strcmp(argv[1], "-l")) {
+        // load saved game progress
+        if(!scene.load(argv[2])) {
+            message(I18n::Instance().Get(I18n::Key::LOAD_PROGRESS_FAIL));
+            return 0;
+        }
+        InputLanguage();
+    }
+    else {
+        printHelp();
+        return 0;
+    }
+
+    scene.setMode(inputKeyMode());
+
+    scene.play();
+
     return 0;
 }

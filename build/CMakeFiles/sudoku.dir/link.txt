@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/sudoku.dir/src/block.cpp.o CMakeFiles/sudoku.dir/src/command.cpp.o CMakeFiles/sudoku.dir/src/i18n.cpp.o CMakeFiles/sudoku.dir/src/input.cpp.o CMakeFiles/sudoku.dir/src/main.cpp.o CMakeFiles/sudoku.dir/src/scene.cpp.o  -o ../bin/sudoku 
